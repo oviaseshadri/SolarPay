@@ -1,20 +1,14 @@
-CHAINCART
+Solar Pay
 
-ChainCart is a revolutionary shopping experience that brings the convenience of decentralized technology to your fingertips. With ChainCart, you can streamline your shopping experience and enjoy seamless transactions across multiple blockchain networks.
+SolarPay is a revolutionary payment experience that brings the convenience of decentralized technology to your fingertips. With SolarPay, you can streamline your utility bill payments experience and enjoy seamless transactions across multiple blockchain networks.
 
 FEATURES
 
-Decentralized Shopping: Shop with confidence knowing that your transactions are securely processed on various blockchain networks.
-
-Barcode Scanning: Effortlessly add items to your cart by scanning their barcodes using your smartphone camera.
-
-Global Product Database: Access a comprehensive database of products from around the world, ensuring you find exactly what you need.
-
-Secure Payments: Finalize your purchases securely using blockchain technology, protecting your financial information from unauthorized access.
+Pay Utility bills seamlessly and in a decentralised way from you mobile. You consumption data is directly stored on chain with no middle man involved
 
 DEPLOYMENT CONTRACT ADDRESSES:
 
-ChainCart has been deployed on the following blockchain networks:
+Solar Pay has been deployed on the following blockchain networks:
 
 Chiliz Deployment Contract Address:   0x7De3D9e136ba817cB98AB41A9420C21804321bf3  
 
@@ -27,17 +21,8 @@ Filecoin Deployment Contract Address:  0xac7334E4Cc4ac95D1fe6474e31d27cA810722De
 
 Arbitrum Deployment Contract Address: 0x82486069a94db7Ca0c346D57178251939d6b1D0f
 
-Demo Video: https://www.loom.com/share/efd5e38c72794e31a8b8157164d36fb2?sid=180abc07-c94e-4df3-88a7-6c9a07e1bda3
+Demo Video: 
 
-TEST DATA:
-
-To ensure the smooth operation of ChainCart, we are using the following test data for product scanning and inventory status checking:
-
-| Barcode      | Brand       | Product                   | Price (in $) | Quantity |
-|--------------|-------------|---------------------------|--------------|----------|
-| 5060054134118 | Cawston     | Cloudy Apple Sparkling Water | 1        | 100      |
-| 5065000523138 | Pukka       | Three Mint                | 3           | 100      |
-| 5000159530736 | Fairtrade   | Maltesers                 | 1           | 100      |
 
 Getting Started:
 
@@ -45,11 +30,11 @@ To start using ChainCart, simply follow these steps:
 
 Clone the repository: git clone https://github.com/yourusername/chaincart.git
 Install dependencies: npm install
-Run the application: npm start
+Run the application: npm start or npm run ev
 
 CONCLUSION
 
-Experience the future of shopping with ChainCart. Say goodbye to traditional shopping hassles and embrace the seamless, secure, and decentralized shopping experience offered by ChainCart. Start shopping smarter today!
+Experience the future of payment with Solar Pay. Say goodbye to traditional Electricity billing portals hassles and embrace the seamless, secure, and decentralized payment experience offered by Solar Pay. Choose smarter today!
 
 
 Contract Addresses: <br/>
