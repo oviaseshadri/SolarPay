@@ -28,7 +28,7 @@ Getting Started:
 
 To start using ChainCart, simply follow these steps:
 
-Clone the repository: git clone https://github.com/yourusername/chaincart.git
+Clone the repository: git clone https://github.com/oviaseshadri/solarpay.git
 Install dependencies: npm install
 Run the application: npm start or npm run ev
 
