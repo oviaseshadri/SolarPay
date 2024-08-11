@@ -19,7 +19,7 @@ export default function ConnectButton() {
     return (
       <span className="w-full flex flex-row justify-center items-center text-white">
         {/* {currentAccount} */}
-        Wallet connected, Pay bill or view your usage and payment history!
+        Wallet {currentAccount} connected, Pay bill or view your usage and payment history!
       </span>
     );
 

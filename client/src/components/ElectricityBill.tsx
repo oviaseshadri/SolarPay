@@ -11,7 +11,7 @@ import ConnectButton from "./ConnectButton";
 
 
 const ElectricityBill = () => {
-  const { getBillAmount, payBill } = useContext(TransactionContext);
+  const { getBillAmount, payBill, connectWallet } = useContext(TransactionContext);
 
   const [hideConnectBtn, setHideButtonBtn] = useState(true);
   const [error, setError] = useState(null);
@@ -51,7 +51,7 @@ const ElectricityBill = () => {
         <div className="flex flex-col items-center text-white">
           <div className="flex items-center">
             <span className="mx-4">Current bill:</span>
-            {billAmount !== null ? <span className="text-xl font-bold">{billAmount} USDC</span> : '-'}
+            {billAmount !== null ? <span className="text-xl font-bold">{billAmount} WEI</span> : '-'}
           </div>
         </div>
       </div>
