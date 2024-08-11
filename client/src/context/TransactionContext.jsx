@@ -166,7 +166,7 @@ export const TransactionsProvider = ({ children }) => {
     try {
       if (ethereum) {
         const transactionsContract = createEthereumContract();
-        const billAmount = await transactionsContract.calculateBill();
+        const billAmount = await transactionsContract.calculateBill(currentAccount);
         console.log('Bill amount:', billAmount.toString());
         return billAmount.toString();
       } else {
@@ -183,7 +183,7 @@ export const TransactionsProvider = ({ children }) => {
     try {
       if (ethereum) {
         const transactionsContract = createEthereumContract();
-        const transactionHash = await transactionsContract.payBill({ value: amount });
+        const transactionHash = await transactionsContract.payBill(currentAccount,{ value: amount });
         console.log(`Loading - ${transactionHash.hash}`);
         await transactionHash.wait();
         console.log('Bill paid successfully!');

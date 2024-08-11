@@ -41,8 +41,8 @@ contract ElectricityConsumption {
         DollarPerUnit = newDollarPerUnit;
     }
 
-    function addConsumption(uint256 unitsConsumed) external {
-        User storage user = users[msg.sender];
+    function addConsumption(address userAddress, uint256 unitsConsumed) external {
+        User storage user = users[userAddress];
 
         // If new user, create new entry
         if (
@@ -58,17 +58,17 @@ contract ElectricityConsumption {
             user.unitsConsumedSinceLastPayment += unitsConsumed;
         }
 
-        emit ConsumptionAdded(msg.sender, unitsConsumed, user.unitsConsumedSinceLastPayment);
+        emit ConsumptionAdded(userAddress, unitsConsumed, user.unitsConsumedSinceLastPayment);
     }
 
-    function calculateBill() public view returns (uint256) {
-        User storage user = users[msg.sender];
+    function calculateBill(address userAddress) public view returns (uint256) {
+        User storage user = users[userAddress];
         return user.unitsConsumedSinceLastPayment * DollarPerUnit;
     }
 
-    function payBill() external payable {
-        User storage user = users[msg.sender];
-        uint256 billAmount = calculateBill();
+    function payBill(address userAddress) external payable {
+        User storage user = users[userAddress];
+        uint256 billAmount = calculateBill(userAddress);
 
         require(msg.value == billAmount, "Insufficient funds");
 
@@ -86,7 +86,7 @@ contract ElectricityConsumption {
         // Reset units consumed since last payment
         user.unitsConsumedSinceLastPayment = 0;
 
-        emit BillPaid(msg.sender, user.totalUnitsPaidFor, msg.value);
+        emit BillPaid(userAddress, user.totalUnitsPaidFor, msg.value);
     }
 
     function getPaymentHistory(address userAddress)
