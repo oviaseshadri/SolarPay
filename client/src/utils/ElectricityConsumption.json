@@ -2,24 +2,6 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "userAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "unitsConsumed",
-				"type": "uint256"
-			}
-		],
-		"name": "addConsumption",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "uint256",
 				"name": "initialDollarPerUnit",
 				"type": "uint256"
@@ -80,27 +62,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "payBill",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "newDollarPerUnit",
-				"type": "uint256"
-			}
-		],
-		"name": "setDollarPerUnit",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "calculateBill",
+		"name": "DollarPerUnit",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -112,8 +74,32 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "DollarPerUnit",
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "userAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "unitsConsumed",
+				"type": "uint256"
+			}
+		],
+		"name": "addConsumption",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "userAddress",
+				"type": "address"
+			}
+		],
+		"name": "calculateBill",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -171,6 +157,32 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "userAddress",
+				"type": "address"
+			}
+		],
+		"name": "payBill",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "newDollarPerUnit",
+				"type": "uint256"
+			}
+		],
+		"name": "setDollarPerUnit",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
