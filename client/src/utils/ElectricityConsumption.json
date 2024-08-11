@@ -1,204 +1,200 @@
-{
-  "_format": "hh-sol-artifact-1",
-  "contractName": "ElectricityConsumption",
-  "sourceName": "contracts/solarData.sol",
-  "abi": [
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "initialDollarPerUnit",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "constructor"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "user",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "unitsPaidFor",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "amountPaid",
-          "type": "uint256"
-        }
-      ],
-      "name": "BillPaid",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "user",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "unitsConsumed",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "unitsConsumedSinceLastPayment",
-          "type": "uint256"
-        }
-      ],
-      "name": "ConsumptionAdded",
-      "type": "event"
-    },
-    {
-      "inputs": [],
-      "name": "DollarPerUnit",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "unitsConsumed",
-          "type": "uint256"
-        }
-      ],
-      "name": "addConsumption",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "calculateBill",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "userAddress",
-          "type": "address"
-        }
-      ],
-      "name": "getPaymentHistory",
-      "outputs": [
-        {
-          "components": [
-            {
-              "internalType": "uint256",
-              "name": "datetime",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "unitsPaidFor",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "dollarAmountPaid",
-              "type": "uint256"
-            }
-          ],
-          "internalType": "struct ElectricityConsumption.Payment[]",
-          "name": "",
-          "type": "tuple[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "owner",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "payBill",
-      "outputs": [],
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "newDollarPerUnit",
-          "type": "uint256"
-        }
-      ],
-      "name": "setDollarPerUnit",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "name": "users",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "totalUnitsPaidFor",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "unitsConsumedSinceLastPayment",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    }
-  ],
-  "bytecode": "0x608060405234801561001057600080fd5b5060405161061238038061061283398101604081905261002f91610049565b600280546001600160a01b03191633179055600155610062565b60006020828403121561005b57600080fd5b5051919050565b6105a1806100716000396000f3fe60806040526004361061007b5760003560e01c80637da2ba7c1161004e5780637da2ba7c146100e85780638da5cb5b14610115578063a87430ba1461014d578063d1e4c10e1461019657600080fd5b806305851cbe1461008057806340c27980146100a85780635e84db02146100ca5780637a781658146100e0575b600080fd5b34801561008c57600080fd5b506100956101b6565b6040519081526020015b60405180910390f35b3480156100b457600080fd5b506100c86100c3366004610483565b6101dd565b005b3480156100d657600080fd5b5061009560015481565b6100c8610284565b3480156100f457600080fd5b5061010861010336600461049c565b61039f565b60405161009f91906104cc565b34801561012157600080fd5b50600254610135906001600160a01b031681565b6040516001600160a01b03909116815260200161009f565b34801561015957600080fd5b5061018161016836600461049c565b6000602081905290815260409020805460019091015482565b6040805192835260208301919091520161009f565b3480156101a257600080fd5b506100c86101b1366004610483565b610433565b33600090815260208190526040812060018054908201546101d7919061053b565b91505090565b33600090815260208190526040902080541580156101fd57506001810154155b801561020b57506002810154155b1561022057600081556001810182905561023a565b818160010160008282546102349190610558565b90915550505b600181015460405133917f021d13664bbddd9cd8891a571a16f9e055c6705f5a95a8c14c48ced8ed5aa9ad9161027891868252602082015260400190565b60405180910390a25050565b3360009081526020819052604081209061029c6101b6565b90508034146102e75760405162461bcd60e51b8152602060048201526012602482015271496e73756666696369656e742066756e647360701b60448201526064015b60405180910390fd5b81600101548260000160008282546102ff9190610558565b909155505060408051606081018252428152600180850180546020808501918252348587018181526002808b018054808901825560009182529481208951600390960201948555945196840196909655519190940155905584549251919233927fd63df62214640a13057f603044a0380df922b3d037bf4b398863a5ec1e211d4e92610392928252602082015260400190565b60405180910390a2505050565b6001600160a01b038116600090815260208181526040808320600201805482518185028101850190935280835260609492939192909184015b8282101561042857838290600052602060002090600302016040518060600160405290816000820154815260200160018201548152602001600282015481525050815260200190600101906103d8565b505050509050919050565b6002546001600160a01b0316331461047e5760405162461bcd60e51b815260206004820152600e60248201526d139bdd08185d5d1a1bdc9a5e995960921b60448201526064016102de565b600155565b60006020828403121561049557600080fd5b5035919050565b6000602082840312156104ae57600080fd5b81356001600160a01b03811681146104c557600080fd5b9392505050565b602080825282518282018190526000919060409081850190868401855b8281101561051857815180518552868101518786015285015185850152606090930192908501906001016104e9565b5091979650505050505050565b634e487b7160e01b600052601160045260246000fd5b808202811582820484141761055257610552610525565b92915050565b808201808211156105525761055261052556fea2646970667358221220329856ae226ef712b1b1f743b7eb86645c6e75d2dad2395158e92dbde092e55a64736f6c63430008150033",
-  "deployedBytecode": "0x60806040526004361061007b5760003560e01c80637da2ba7c1161004e5780637da2ba7c146100e85780638da5cb5b14610115578063a87430ba1461014d578063d1e4c10e1461019657600080fd5b806305851cbe1461008057806340c27980146100a85780635e84db02146100ca5780637a781658146100e0575b600080fd5b34801561008c57600080fd5b506100956101b6565b6040519081526020015b60405180910390f35b3480156100b457600080fd5b506100c86100c3366004610483565b6101dd565b005b3480156100d657600080fd5b5061009560015481565b6100c8610284565b3480156100f457600080fd5b5061010861010336600461049c565b61039f565b60405161009f91906104cc565b34801561012157600080fd5b50600254610135906001600160a01b031681565b6040516001600160a01b03909116815260200161009f565b34801561015957600080fd5b5061018161016836600461049c565b6000602081905290815260409020805460019091015482565b6040805192835260208301919091520161009f565b3480156101a257600080fd5b506100c86101b1366004610483565b610433565b33600090815260208190526040812060018054908201546101d7919061053b565b91505090565b33600090815260208190526040902080541580156101fd57506001810154155b801561020b57506002810154155b1561022057600081556001810182905561023a565b818160010160008282546102349190610558565b90915550505b600181015460405133917f021d13664bbddd9cd8891a571a16f9e055c6705f5a95a8c14c48ced8ed5aa9ad9161027891868252602082015260400190565b60405180910390a25050565b3360009081526020819052604081209061029c6101b6565b90508034146102e75760405162461bcd60e51b8152602060048201526012602482015271496e73756666696369656e742066756e647360701b60448201526064015b60405180910390fd5b81600101548260000160008282546102ff9190610558565b909155505060408051606081018252428152600180850180546020808501918252348587018181526002808b018054808901825560009182529481208951600390960201948555945196840196909655519190940155905584549251919233927fd63df62214640a13057f603044a0380df922b3d037bf4b398863a5ec1e211d4e92610392928252602082015260400190565b60405180910390a2505050565b6001600160a01b038116600090815260208181526040808320600201805482518185028101850190935280835260609492939192909184015b8282101561042857838290600052602060002090600302016040518060600160405290816000820154815260200160018201548152602001600282015481525050815260200190600101906103d8565b505050509050919050565b6002546001600160a01b0316331461047e5760405162461bcd60e51b815260206004820152600e60248201526d139bdd08185d5d1a1bdc9a5e995960921b60448201526064016102de565b600155565b60006020828403121561049557600080fd5b5035919050565b6000602082840312156104ae57600080fd5b81356001600160a01b03811681146104c557600080fd5b9392505050565b602080825282518282018190526000919060409081850190868401855b8281101561051857815180518552868101518786015285015185850152606090930192908501906001016104e9565b5091979650505050505050565b634e487b7160e01b600052601160045260246000fd5b808202811582820484141761055257610552610525565b92915050565b808201808211156105525761055261052556fea2646970667358221220329856ae226ef712b1b1f743b7eb86645c6e75d2dad2395158e92dbde092e55a64736f6c63430008150033",
-  "linkReferences": {},
-  "deployedLinkReferences": {}
-}
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "userAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "unitsConsumed",
+				"type": "uint256"
+			}
+		],
+		"name": "addConsumption",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "initialDollarPerUnit",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "unitsPaidFor",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amountPaid",
+				"type": "uint256"
+			}
+		],
+		"name": "BillPaid",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "unitsConsumed",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "unitsConsumedSinceLastPayment",
+				"type": "uint256"
+			}
+		],
+		"name": "ConsumptionAdded",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "payBill",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "newDollarPerUnit",
+				"type": "uint256"
+			}
+		],
+		"name": "setDollarPerUnit",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "calculateBill",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "DollarPerUnit",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getPaymentHistory",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "datetime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "unitsPaidFor",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dollarAmountPaid",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct ElectricityConsumption.Payment[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "users",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "totalUnitsPaidFor",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "unitsConsumedSinceLastPayment",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
