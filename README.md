@@ -10,13 +10,11 @@ DEPLOYMENT CONTRACT ADDRESSES:<br/>
 
 Solar Pay has been deployed on the following blockchain networks:<br/>
 
-Chiliz Deployment Contract Address:     <br/>
-Celo Deployment Contract Address:  <br/>
-Filecoin Deployment Contract Address:  <br/>
-Arbitrum Deployment Contract Address: <br/>
-Scroll:  <br/>
-FVM :   <br/>
-Mantle:  <br/>
+Chiliz Deployment Contract Address: 0xA399DF3EE808DAa98Ccc9A3D5fa2d9E001e11dF2    <br/>
+Celo Deployment Contract Address:  0x012e0161FBf9aCd1eA808337b9c560042233F0DD <br/>
+Mode Deployment Contract Address:  https://sepolia.explorer.mode.network/tx/0x38683de093325c6546f77afe50e96cfc809c34df3ae6c849233d24974b82a746 <br/>
+Arbitrum Deployment Contract Address: 0xA399DF3EE808DAa98Ccc9A3D5fa2d9E001e11dF2 <br/>
+Base : https://base-sepolia.blockscout.com/tx/0xb28a8925d656bd780881e3af2247c361fc4b1bba1d877c315e80485814c94617 <br/>
 
 Demo Video: 
 
