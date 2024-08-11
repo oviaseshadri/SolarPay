@@ -92,7 +92,7 @@ export const TransactionsProvider = ({ children }) => {
       if (!ethereum) return alert("Please install MetaMask.");
       const accounts = await ethereum.request({ method: "eth_requestAccounts" });
       console.log(accounts);
-      
+
       setCurrentAccount(accounts[0]);
       // window.location.reload();
     } catch (error) {
@@ -162,6 +162,42 @@ export const TransactionsProvider = ({ children }) => {
 
   }
 
+  const getBillAmount = async () => {
+    try {
+      if (ethereum) {
+        const transactionsContract = createEthereumContract();
+        const billAmount = await transactionsContract.calculateBill();
+        console.log('Bill amount:', billAmount);
+        return billAmount;
+      } else {
+        console.log("No ethereum object");
+      }
+    } catch (error) {
+      console.log(error);
+      return 0;
+      throw new Error(error.message);
+    }
+  }
+
+  const payBill = async (amount) => {
+    try {
+      if (ethereum) {
+        const transactionsContract = createEthereumContract();
+        const parsedAmount = ethers.utils.parseEther(amount.toString());
+        const transactionHash = await transactionsContract.payBill({ value: parsedAmount });
+        console.log(`Loading - ${transactionHash.hash}`);
+        await transactionHash.wait();
+        console.log('Bill paid successfully!');
+        window.location.reload();
+      } else {
+        console.log("No ethereum object");
+      }
+    } catch (error) {
+      console.log(error);
+      throw new Error(error.message);
+    }
+  }
+
   // useEffect(() => {
   //   // checkIfWalletIsConnect();
   //   checkIfTransactionsExists();
@@ -178,7 +214,9 @@ export const TransactionsProvider = ({ children }) => {
         sendTransaction,
         handleChange,
         formData,
-        addItemToCart
+        addItemToCart,
+        getBillAmount,
+        payBill
       }}
     >
       {children}

@@ -1,10 +1,10 @@
-import abi from "./ChainCartABI.json";
+import contractJson from "./ElectricityConsumption.json";
 import csudabi from "./cusdabi.json";
 
-export const contractAddress = "0x0B761b8c768A2301dDb48831aB95Dd4FB76c35CA";
-export const contractABI = abi;
+export const contractAddress = "0x19bf72D056FcF008F710Ee2995bEE66C259707CE";
+export const contractABI = contractJson.abi;
 export const cusdABI = csudabi;
-// export const chainname = "celoAlfajores";
+export const chainname = "celoAlfajores";
 
 
 // export const contractAddress = "0xfCCF80344a668b72ac4Be23513F0E9E4a35C84fA";
